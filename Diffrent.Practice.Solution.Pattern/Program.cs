@@ -15,12 +15,14 @@ using Diffrent.Practice.Solution.Pattern.ObjectOrientedPrograming.Inheritance.Ba
 using Diffrent.Practice.Solution.Pattern.ObjectOrientedPrograming.Inheritance.DerivedClasses;
 using Diffrent.Practice.Solution.Pattern.ObjectOrientedPrograming.Inheritance.Interfaces;
 using System.Text.Json;
+using Diffrent.Practice.Concept.Middleware.RequestData;
+using Diffrent.Practice.Concept.Middleware;
 
 namespace Diffrent.Practice.Solution.Pattern
 {
     public static class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             while (true)
             {
@@ -568,6 +570,19 @@ namespace Diffrent.Practice.Solution.Pattern
                         Console.WriteLine("Current Account Created:\n" + currentAccount);
                         #endregion
                         break;
+                    case 54:
+                        #region Uses of Middleware Concept 
+                        var context = new Context() { Message = "Message Processed" };
+                        var middlewarepipeline = new List<ProcessingRequest.MiddlewareDelegate>
+                        {
+                            ProcessingRequest.LoggingMiddleware,
+                            ProcessingRequest.AuthenticationMiddleware
+                        };
+                        ProcessingRequest.MiddlewareDelegate pipeline = ProcessingRequest.BuildMiddlewarePipeLine(middlewarepipeline);
+                        await pipeline(context, () => Task.CompletedTask);
+                        Console.WriteLine("Final Message: " + context.Message);
+                        #endregion
+                        break;
                     default:
                         Console.WriteLine("Choose correct option: Something went wrong");
                         break;
@@ -576,4 +591,3 @@ namespace Diffrent.Practice.Solution.Pattern
         }
     }
 }
-

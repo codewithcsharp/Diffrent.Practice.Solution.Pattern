@@ -9,12 +9,13 @@
 
   <ItemGroup>
     <Folder Include="ExtentionMethod\Interface\" />
-    <Folder Include="Structs\" />
+    <Folder Include="RefAndOut\" />
     <Folder Include="ObjectOrientedPrograming\Polymerphism\CompiletimePolymerphism\MethodOverLoading\" />
     <Folder Include="ObjectOrientedPrograming\Polymerphism\RuntimePolymerphism\MethodOverRidding\" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Diffrent.Practice.Concept.Middleware\Diffrent.Practice.Concept.Middleware.csproj" />
     <ProjectReference Include="..\Diffrent.Practice.Solution.Math\Diffrent.Practice.Solution.Math.csproj" />
   </ItemGroup>
 
