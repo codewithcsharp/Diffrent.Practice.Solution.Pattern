@@ -2,6 +2,7 @@ using Diffrent.Practice.Solution.Pattern.DataStructure;
 using Diffrent.Practice.Solution.Pattern.DataStructure.SinglyLinkedList;
 using Diffrent.Practice.Solution.Pattern.DesignPatterns.FactoryDesignPattern;
 using Diffrent.Practice.Solution.Pattern.DesignPatterns.FactoryDesignPattern.Interfaces;
+using Diffrent.Practice.Solution.Pattern.DesignPatterns.RepositoryDesignPattern.Repository;
 using Diffrent.Practice.Solution.Pattern.DesignPatterns.SingletonDesignPattern;
 using Diffrent.Practice.Solution.Pattern.Enumerations;
 using Diffrent.Practice.Solution.Pattern.Enumerations.EnumsUsingExplicitValue;
@@ -21,48 +22,6 @@ namespace Diffrent.Practice.Solution.Pattern
         {
             while (true)
             {
-                Console.WriteLine($" 1. Reverse an Array of an Integer : ");
-                Console.WriteLine($" 2. Reverse a string Input : ");
-                Console.WriteLine($" 3. Combine two string Array Input into Single Array : ");
-                Console.WriteLine($" 4. Reverse a Sentance of strings : ");
-                Console.WriteLine($" 5. Find the fixed charecter from given string : ");
-                Console.WriteLine($" 6. Check Is Number is Even Number : ");
-                Console.WriteLine($" 7. Check Is Number is Prime Number : ");
-                Console.WriteLine($" 8. Check Is Number Armstrong Number : ");
-                Console.WriteLine($" 9. Check Is String is Pelindrom or Not : ");
-                Console.WriteLine($" 10. Find the Common Prefix from an String Array : ");
-                Console.WriteLine($" 11. Find Duplicate Frequency in the given String : ");
-                Console.WriteLine($" 12. Find the Common item from the given two Integer Array : ");
-                Console.WriteLine($" 13. Reverse a string without using inbuilt method : ");
-                Console.WriteLine($" 14. Print star problem - PrintEvenPeramid : ");
-                Console.WriteLine($" 15. Print star problem - PrintOddPeramid : ");
-                Console.WriteLine($" 16. Print star problem - PrintLeftStarPeramid : ");
-                Console.WriteLine($" 17. Print star problem - PrintRightStarPeramid : ");
-                Console.WriteLine($" 18. Print star problem - PrintStarParllel : ");
-                Console.WriteLine($" 19. Print star problem - PrintDownStar : ");
-                Console.WriteLine($" 20. Print swap number using third variable : ");
-                Console.WriteLine($" 21. Print swap number without using third variable : ");
-                Console.WriteLine($" 22. Print swap number using third variable in Genric Class : ");
-                Console.WriteLine($" 23. Print Array and Check Array is IsMonotalic : ");
-                Console.WriteLine($" 24. Print OccrenceChar : ");
-                Console.WriteLine($" 25. Print TwoSums : ");
-                Console.WriteLine($" 26. Print Tuple : ");
-                Console.WriteLine($" 27. Print Tuple Find max and min value : ");
-                Console.WriteLine($" 28. Print Remove Duplicates from an Array : ");
-                Console.WriteLine($" 29. Print Find Second Largest element in Array : ");
-                Console.WriteLine($" 30. Print Shift pair numbers in last : ");
-                Console.WriteLine($" 31. Find the longest subarrays in the Array : ");
-                Console.WriteLine($" 32. Print Combination on Array : ");
-                Console.WriteLine($" 33. Print Sum of string Itrate Integers - Total : ");
-                Console.WriteLine($" 34. Print Polymerphism Implementation : ");
-                Console.WriteLine($" 35. Print Merge Two Shorted Array - Array : ");
-                Console.WriteLine($" 36. Find second heighest integer - Integer : ");
-                Console.WriteLine($" 37. Print Short an Array : Shorting Technique - Quick Short : ");
-                Console.WriteLine($" 38. Print Output of Polymerphism - Polymerphism : ");
-                Console.WriteLine($" 39. Print Find middle index element from node list - Linkedlist : ");
-                Console.WriteLine($" 40. Print Check Node is Circular - Linkedlist : ");
-                Console.WriteLine($" 41. Print Longest Sub Array : ");
-
                 Console.Write("Enter your input choice to run the program :");
 
                 int choice = Convert.ToInt32(Console.ReadLine());
@@ -580,6 +539,15 @@ namespace Diffrent.Practice.Solution.Pattern
                         OperationOnEnumeration operationOnEnumeration = new() { EventDay = Enumeration.Monday, EventName = "Project Managment" };
                         string jsonSerialization = JsonSerializer.Serialize(operationOnEnumeration);
                         Console.WriteLine($"Enumeration Example Code Changes demonstration { jsonSerialization }");
+                        #endregion
+                        break;
+                    case 52:
+                        #region Repository Design Pattern Code Changes Example
+                        var productRepository = new ProductRepository();
+                        foreach (var product in productRepository.GetAll()) 
+                        {
+                            Console.WriteLine($"Id: {product.Id}, Name: {product.Name}, Price: {product.Price}");
+                        }
                         #endregion
                         break;
                     default:
