@@ -1,5 +1,7 @@
 using Diffrent.Practice.Solution.Pattern.DataStructure;
 using Diffrent.Practice.Solution.Pattern.DataStructure.SinglyLinkedList;
+using Diffrent.Practice.Solution.Pattern.DesignPatterns.BuilderDesignPattern.Interfaces;
+using Diffrent.Practice.Solution.Pattern.DesignPatterns.BuilderDesignPattern;
 using Diffrent.Practice.Solution.Pattern.DesignPatterns.FactoryDesignPattern;
 using Diffrent.Practice.Solution.Pattern.DesignPatterns.FactoryDesignPattern.Interfaces;
 using Diffrent.Practice.Solution.Pattern.DesignPatterns.RepositoryDesignPattern.Repository;
@@ -548,6 +550,22 @@ namespace Diffrent.Practice.Solution.Pattern
                         {
                             Console.WriteLine($"Id: {product.Id}, Name: {product.Name}, Price: {product.Price}");
                         }
+                        #endregion
+                        break;
+                    case 53:
+                        #region Builder Design Pattern Code Changes
+                        BankAccountDirector director = new BankAccountDirector();
+                        IBankAccountBuilder builder = new BankAccountBuilder();
+
+                        // Create a Savings Account
+                        BankAccount savingsAccount = director.BuildSavingsAccount(builder);
+                        Console.WriteLine("Savings Account Created:\n" + savingsAccount);
+
+                        Console.WriteLine("\n-----------------------------\n");
+
+                        // Create a Current Account
+                        BankAccount currentAccount = director.BuildCurrentAccount(builder);
+                        Console.WriteLine("Current Account Created:\n" + currentAccount);
                         #endregion
                         break;
                     default:
