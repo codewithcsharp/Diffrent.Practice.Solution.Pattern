@@ -3,12 +3,15 @@ using Diffrent.Practice.Solution.Pattern.DataStructure.SinglyLinkedList;
 using Diffrent.Practice.Solution.Pattern.DesignPatterns.FactoryDesignPattern;
 using Diffrent.Practice.Solution.Pattern.DesignPatterns.FactoryDesignPattern.Interfaces;
 using Diffrent.Practice.Solution.Pattern.DesignPatterns.SingletonDesignPattern;
+using Diffrent.Practice.Solution.Pattern.Enumerations;
+using Diffrent.Practice.Solution.Pattern.Enumerations.EnumsUsingExplicitValue;
 using Diffrent.Practice.Solution.Pattern.Generics.GenericsUsingWhere;
 using Diffrent.Practice.Solution.Pattern.Generics.GenericsWithoutUsingWhere;
 using Diffrent.Practice.Solution.Pattern.ObjectOrientedPrograming.Abstaraction.Interfaces;
 using Diffrent.Practice.Solution.Pattern.ObjectOrientedPrograming.Inheritance.BaseClasses;
 using Diffrent.Practice.Solution.Pattern.ObjectOrientedPrograming.Inheritance.DerivedClasses;
 using Diffrent.Practice.Solution.Pattern.ObjectOrientedPrograming.Inheritance.Interfaces;
+using System.Text.Json;
 
 namespace Diffrent.Practice.Solution.Pattern
 {
@@ -572,8 +575,15 @@ namespace Diffrent.Practice.Solution.Pattern
                         Console.WriteLine("Singleton class Instance " + instance);
                         #endregion
                         break;
+                        case 51:
+                        #region Enumeration Example Code Changes demonstration
+                        OperationOnEnumeration operationOnEnumeration = new() { EventDay = Enumeration.Monday, EventName = "Project Managment" };
+                        string jsonSerialization = JsonSerializer.Serialize(operationOnEnumeration);
+                        Console.WriteLine($"Enumeration Example Code Changes demonstration { jsonSerialization }");
+                        #endregion
+                        break;
                     default:
-                        Console.WriteLine("Something went wrong");
+                        Console.WriteLine("Choose correct option: Something went wrong");
                         break;
                 }
             }
