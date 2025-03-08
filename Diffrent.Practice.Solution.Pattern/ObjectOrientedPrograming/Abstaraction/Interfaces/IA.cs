@@ -1,4 +1,4 @@
-﻿namespace CSharp
+﻿namespace Diffrent.Practice.Solution.Pattern.ObjectOrientedPrograming.Abstaraction.Interfaces
 {
     public interface IA
     {
@@ -18,7 +18,7 @@
         }
         int Print(int a, int b);
 
-        // this is not possible - will throw compile time error
+        // this is not possible - will throw compile time error in print method
         //float Print(int a, int b);
     }
 }

@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Diffrent.Practice.Solution.Pattern.ObjectOrientedPrograming.Abstaraction.Interfaces;
 
-namespace CSharp
+namespace Diffrent.Practice.Solution.Pattern.ObjectOrientedPrograming.Inheritance.Interfaces
 {
-    public class Base : IA
+    public class InterfaceImplementation : IA
     {
         public string Name => throw new NotImplementedException();
 
@@ -19,7 +15,7 @@ namespace CSharp
             throw new NotImplementedException();
         }
 
-        public static int IPrint() => throw new NotImplementedException();   
+        public static int IPrint() => throw new NotImplementedException();
 
         int IA.IAPrint(int i)
         {

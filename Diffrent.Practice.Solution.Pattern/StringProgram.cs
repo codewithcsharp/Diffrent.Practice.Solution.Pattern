@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace CSharp
+namespace Diffrent.Practice.Solution.Pattern
 {
     public class StringProgram
     {
@@ -123,7 +123,7 @@ namespace CSharp
 
                 int digit = num % 10;
                 num /= 10;
-                result += (int)Math.Pow(digit, count);
+                result += (int)System.Math.Pow(digit, count);
             }
             return temp == result;
         }
@@ -227,7 +227,7 @@ namespace CSharp
             int[] l2 = { 200, 250, 50, 7, 90 };
             Array.Sort(l2);
 
-            int[] lst = new int[Math.Min(l1.Length, l2.Length)];
+            int[] lst = new int[System.Math.Min(l1.Length, l2.Length)];
             int temp = 0, i = 0, j = 0;
 
             while (i < l1.Length && j < l2.Length)
@@ -430,7 +430,7 @@ namespace CSharp
                     Isdec = false; ;
                 }
             }
-            return (Isinc | Isdec) ? "Monotonic" : "Not Monotonic";
+            return Isinc | Isdec ? "Monotonic" : "Not Monotonic";
         }
 
         #endregion
@@ -524,7 +524,7 @@ namespace CSharp
             int max = int.MinValue;
             foreach (int currentItem in arr)
             {
-                if ((currentItem < min) || (currentItem > max))
+                if (currentItem < min || currentItem > max)
                 {
                     min = currentItem;
                     max = currentItem;
@@ -852,11 +852,11 @@ namespace CSharp
 
         // int[] array = { 1, 2, 3, 4, 5, 6, 7, 0, 17, 15, 23, 24 };
 
-        public static int[] QuickShort(int[] arr) 
+        public static int[] QuickShort(int[] arr)
         {
             QuickShort(arr, 0, arr.Length - 1);
 
-            return arr; 
+            return arr;
         }
 
         private static void QuickShort(int[] arr, int left, int right)
@@ -921,7 +921,7 @@ namespace CSharp
 
         #endregion
 
-        #region Find Longest SubSequence - Array
+        #region Find the Longest Sub Sequence Array - Array
 
         public static int FindLongestSub(int[] arr)
         {
@@ -938,16 +938,10 @@ namespace CSharp
                         current++;
                         curentItem++;
                     }
-                    logestSubArray = Math.Max(logestSubArray, curentItem);
+                    logestSubArray = System.Math.Max(logestSubArray, curentItem);
                 }
             }
             return logestSubArray;
-        }
-
-        static void Main(string[] args)
-        {
-            int[] longArray = { 1, 9, 3, 10, 4, 20, 2 };
-            Console.WriteLine("Longest consecutive subsequence length is " + StringProgram.FindLongestSub(longArray));
         }
 
         #endregion

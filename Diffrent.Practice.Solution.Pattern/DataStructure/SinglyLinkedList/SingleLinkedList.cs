@@ -1,6 +1,4 @@
-﻿using Diffrent.Practice.Solution.Pattern.DataStructure;
-
-namespace Diffrent.Practice.Solution.Pattern.SinglyLinkedList
+﻿namespace Diffrent.Practice.Solution.Pattern.DataStructure.SinglyLinkedList
 {
     public class SingleLinkedList
     {

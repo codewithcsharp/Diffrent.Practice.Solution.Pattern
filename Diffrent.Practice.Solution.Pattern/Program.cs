@@ -1,56 +1,31 @@
-using CSharp;
 using Diffrent.Practice.Solution.Pattern.DataStructure;
-using Diffrent.Practice.Solution.Pattern.SinglyLinkedList;
+using Diffrent.Practice.Solution.Pattern.DataStructure.SinglyLinkedList;
+using Diffrent.Practice.Solution.Pattern.DesignPatterns.BuilderDesignPattern.Interfaces;
+using Diffrent.Practice.Solution.Pattern.DesignPatterns.BuilderDesignPattern;
+using Diffrent.Practice.Solution.Pattern.DesignPatterns.FactoryDesignPattern;
+using Diffrent.Practice.Solution.Pattern.DesignPatterns.FactoryDesignPattern.Interfaces;
+using Diffrent.Practice.Solution.Pattern.DesignPatterns.RepositoryDesignPattern.Repository;
+using Diffrent.Practice.Solution.Pattern.DesignPatterns.SingletonDesignPattern;
+using Diffrent.Practice.Solution.Pattern.Enumerations;
+using Diffrent.Practice.Solution.Pattern.Enumerations.EnumsUsingExplicitValue;
+using Diffrent.Practice.Solution.Pattern.Generics.GenericsUsingWhere;
+using Diffrent.Practice.Solution.Pattern.Generics.GenericsWithoutUsingWhere;
+using Diffrent.Practice.Solution.Pattern.ObjectOrientedPrograming.Abstaraction.Interfaces;
+using Diffrent.Practice.Solution.Pattern.ObjectOrientedPrograming.Inheritance.BaseClasses;
+using Diffrent.Practice.Solution.Pattern.ObjectOrientedPrograming.Inheritance.DerivedClasses;
+using Diffrent.Practice.Solution.Pattern.ObjectOrientedPrograming.Inheritance.Interfaces;
+using System.Text.Json;
+using Diffrent.Practice.Concept.Middleware.RequestData;
+using Diffrent.Practice.Concept.Middleware;
 
 namespace Diffrent.Practice.Solution.Pattern
 {
-    public class Program
+    public static class Program
     {
-        public static void main(string[] args)
+        public static async Task Main(string[] args)
         {
             while (true)
             {
-                Console.WriteLine($" 1. Reverse an Array of an Integer : ");
-                Console.WriteLine($" 2. Reverse a string Input : ");
-                Console.WriteLine($" 3. Combine two string Array Input into Single Array : ");
-                Console.WriteLine($" 4. Reverse a Sentance of strings : ");
-                Console.WriteLine($" 5. Find the fixed charecter from given string : ");
-                Console.WriteLine($" 6. Check Is Number is Even Number : ");
-                Console.WriteLine($" 7. Check Is Number is Prime Number : ");
-                Console.WriteLine($" 8. Check Is Number Armstrong Number : ");
-                Console.WriteLine($" 9. Check Is String is Pelindrom or Not : ");
-                Console.WriteLine($" 10. Find the Common Prefix from an String Array : ");
-                Console.WriteLine($" 11. Find Duplicate Frequency in the given String : ");
-                Console.WriteLine($" 12. Find the Common item from the given two Integer Array : ");
-                Console.WriteLine($" 13. Reverse a string without using inbuilt method : ");
-                Console.WriteLine($" 14. Print star problem - PrintEvenPeramid : ");
-                Console.WriteLine($" 15. Print star problem - PrintOddPeramid : ");
-                Console.WriteLine($" 16. Print star problem - PrintLeftStarPeramid : ");
-                Console.WriteLine($" 17. Print star problem - PrintRightStarPeramid : ");
-                Console.WriteLine($" 18. Print star problem - PrintStarParllel : ");
-                Console.WriteLine($" 19. Print star problem - PrintDownStar : ");
-                Console.WriteLine($" 20. Print swap number using third variable : ");
-                Console.WriteLine($" 21. Print swap number without using third variable : ");
-                Console.WriteLine($" 22. Print swap number using third variable in Genric Class : ");
-                Console.WriteLine($" 23. Print Array and Check Array is IsMonotalic : ");
-                Console.WriteLine($" 24. Print OccrenceChar : ");
-                Console.WriteLine($" 25. Print TwoSums : ");
-                Console.WriteLine($" 26. Print Tuple : ");
-                Console.WriteLine($" 27. Print Tuple Find max and min value : ");
-                Console.WriteLine($" 28. Print Remove Duplicates from an Array : ");
-                Console.WriteLine($" 29. Print Find Second Largest element in Array : ");
-                Console.WriteLine($" 30. Print Shift pair numbers in last : ");
-                Console.WriteLine($" 31. Find the longest subarrays in the Array : ");
-                Console.WriteLine($" 32. Print Combination on Array : ");
-                Console.WriteLine($" 33. Print Sum of string Itrate Integers - Total : ");
-                Console.WriteLine($" 34. Print Polymerphism Implementation : ");
-                Console.WriteLine($" 35. Print Merge Two Shorted Array - Array : ");
-                Console.WriteLine($" 36. Find second heighest integer - Integer : ");
-                Console.WriteLine($" 37. Print Short an Array : Shorting Technique - Quick Short : ");
-                Console.WriteLine($" 38. Print Output of Polymerphism - Polymerphism : ");
-                Console.WriteLine($" 39. Print Find middle index element from node list - Linkedlist : ");
-                Console.WriteLine($" 40. Print Check Node is Circular - Linkedlist : ");
-
                 Console.Write("Enter your input choice to run the program :");
 
                 int choice = Convert.ToInt32(Console.ReadLine());
@@ -397,13 +372,13 @@ namespace Diffrent.Practice.Solution.Pattern
                     case 33:
                         #region Polymerphism Implementation - Interface
 
-                        IA Ab = new Base();
+                        IA Ab = new InterfaceImplementation();
                         int objA = Ab.IAPrint(1);
                         Console.WriteLine(objA);
                         int obj1 = Ab.IPrint(13);
                         Console.WriteLine(obj1);
 
-                        Base bc = new();
+                        InterfaceImplementation bc = new();
                         int objB = ((IA)bc).IAPrint(1);
                         Console.WriteLine(objB);
                         int obj2 = ((IA)bc).IPrint(13);
@@ -452,9 +427,9 @@ namespace Diffrent.Practice.Solution.Pattern
                     case 37:
                         #region Output of Polymerphism - Polymerphism
 
-                        BaseClass baseClass = new BaseClass();
+                        BaseClass baseClass = new();
                         baseClass.ShowInDerived();
-                        baseClass = new DerivedClass();
+                        baseClass = new DerivedClassImplementation();
                         baseClass.ShowInDerived();
 
                         #endregion
@@ -510,12 +485,109 @@ namespace Diffrent.Practice.Solution.Pattern
                         Console.WriteLine("Longest consecutive subsequence length is " + StringProgram.FindLongestSub(longArray));
                         #endregion
                         break;
+                    case 41:
+                        #region Calculate arithmetic Addition operation in Generic class
+                        Console.WriteLine("Arithmetic operation in Generic class " + ArithmeticOperation<int>.Add(2, 5));
+                        #endregion
+                        break;
+                    case 42:
+                        #region Calculate arithmetic Sustract operation in Generic class
+                        Console.WriteLine("Arithmetic operation in Generic class " + ArithmeticOperation<int>.Subtract(2, 5));
+                        #endregion
+                        break;
+                    case 43:
+                        #region Calculate arithmetic Multiply operation in Generic class
+                        Console.WriteLine("Arithmetic operation in Generic class " + ArithmeticOperation<int>.Multiply(2, 5));
+                        #endregion
+                        break;
+                    case 44:
+                        #region Calculate arithmetic Division operation in Generic class
+                        Console.WriteLine("Arithmetic operation in Generic class " + ArithmeticOperation<int>.Divide(2, 5));
+                        #endregion
+                        break;
+                    case 45:
+                        #region Calculate Aggregate Addition operation in Generic class
+                        Console.WriteLine("Arithmetic operation in Generic class " + AggregateFunction<int>.Add(2, 5));
+                        #endregion
+                        break;
+                    case 46:
+                        #region Calculate Aggregate Sustract operation in Generic class
+                        Console.WriteLine("Arithmetic operation in Generic class " + AggregateFunction<int>.Subtract(2, 5));
+                        #endregion
+                        break;
+                    case 47:
+                        #region Calculate Aggregate Multiply operation in Generic class
+                        Console.WriteLine("Arithmetic operation in Generic class " + AggregateFunction<int>.Multiply(2, 5));
+                        #endregion
+                        break;
+                    case 48:
+                        #region Calculate Aggregate Division operation in Generic class
+                        Console.WriteLine("Arithmetic operation in Generic class " + AggregateFunction<int>.Divide(2, 5));
+                        #endregion
+                        break;
+                    case 49:
+                        #region Factory Design Pattern Code Changes Example
+                        NotificationFactory emailNotification = new EmailNotificationFactory();
+                        emailNotification.Notify("");
+                        Console.WriteLine("Arithmetic operation in Generic class " + AggregateFunction<int>.Divide(2, 5));
+                        #endregion
+                        break;
+                    case 50:
+                        #region Singleton Design Pattern Code Changes Example
+                        SingletonInstance instance  = SingletonInstance.Instance;
+                        Console.WriteLine("Singleton class Instance " + instance);
+                        #endregion
+                        break;
+                        case 51:
+                        #region Enumeration Example Code Changes demonstration
+                        OperationOnEnumeration operationOnEnumeration = new() { EventDay = Enumeration.Monday, EventName = "Project Managment" };
+                        string jsonSerialization = JsonSerializer.Serialize(operationOnEnumeration);
+                        Console.WriteLine($"Enumeration Example Code Changes demonstration { jsonSerialization }");
+                        #endregion
+                        break;
+                    case 52:
+                        #region Repository Design Pattern Code Changes Example
+                        var productRepository = new ProductRepository();
+                        foreach (var product in productRepository.GetAll()) 
+                        {
+                            Console.WriteLine($"Id: {product.Id}, Name: {product.Name}, Price: {product.Price}");
+                        }
+                        #endregion
+                        break;
+                    case 53:
+                        #region Builder Design Pattern Code Changes
+                        BankAccountDirector director = new BankAccountDirector();
+                        IBankAccountBuilder builder = new BankAccountBuilder();
+
+                        // Create a Savings Account
+                        BankAccount savingsAccount = director.BuildSavingsAccount(builder);
+                        Console.WriteLine("Savings Account Created:\n" + savingsAccount);
+
+                        Console.WriteLine("\n-----------------------------\n");
+
+                        // Create a Current Account
+                        BankAccount currentAccount = director.BuildCurrentAccount(builder);
+                        Console.WriteLine("Current Account Created:\n" + currentAccount);
+                        #endregion
+                        break;
+                    case 54:
+                        #region Uses of Middleware Concept 
+                        var context = new Context() { Message = "Message Processed" };
+                        var middlewarepipeline = new List<ProcessingRequest.MiddlewareDelegate>
+                        {
+                            ProcessingRequest.LoggingMiddleware,
+                            ProcessingRequest.AuthenticationMiddleware
+                        };
+                        ProcessingRequest.MiddlewareDelegate pipeline = ProcessingRequest.BuildMiddlewarePipeLine(middlewarepipeline);
+                        await pipeline(context, () => Task.CompletedTask);
+                        Console.WriteLine("Final Message: " + context.Message);
+                        #endregion
+                        break;
                     default:
-                        Console.WriteLine("Something went wrong");
+                        Console.WriteLine("Choose correct option: Something went wrong");
                         break;
                 }
             }
         }
     }
 }
-

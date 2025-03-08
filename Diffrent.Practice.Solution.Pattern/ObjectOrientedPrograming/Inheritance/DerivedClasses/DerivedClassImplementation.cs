@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Diffrent.Practice.Solution.Pattern.ObjectOrientedPrograming.Inheritance.BaseClasses;
 
-namespace CSharp
+namespace Diffrent.Practice.Solution.Pattern.ObjectOrientedPrograming.Inheritance.DerivedClasses
 {
-    public class DerivedClass : BaseClass
+    public class DerivedClassImplementation : BaseClass
     {
         public override void ShowInDerived()
         {
