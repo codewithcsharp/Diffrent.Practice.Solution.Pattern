@@ -15,8 +15,11 @@ using Diffrent.Practice.Solution.Pattern.ObjectOrientedPrograming.Inheritance.Ba
 using Diffrent.Practice.Solution.Pattern.ObjectOrientedPrograming.Inheritance.DerivedClasses;
 using Diffrent.Practice.Solution.Pattern.ObjectOrientedPrograming.Inheritance.Interfaces;
 using System.Text.Json;
-using Diffrent.Practice.Concept.Middleware.RequestData;
 using Diffrent.Practice.Concept.Middleware;
+using Microsoft.Extensions.DependencyInjection;
+using Diffrent.Practice.Concept.Middleware.CustomMiddlewareService.Interfaces;
+using Diffrent.Practice.Concept.Middleware.CustomMiddlewareService.LoggingService;
+using Diffrent.Practice.Concept.Middleware.CustomMiddlewareService;
 
 namespace Diffrent.Practice.Solution.Pattern
 {
@@ -572,15 +575,23 @@ namespace Diffrent.Practice.Solution.Pattern
                         break;
                     case 54:
                         #region Uses of Middleware Concept 
-                        var context = new Context() { Message = "Message Processed" };
-                        var middlewarepipeline = new List<ProcessingRequest.MiddlewareDelegate>
+                        var middlewarepipeline = new List<BuildProcessingRequest.MiddlewareDelegate>
                         {
-                            ProcessingRequest.LoggingMiddleware,
-                            ProcessingRequest.AuthenticationMiddleware
+                            BuildProcessingRequest.LoggingMiddleware,
                         };
-                        ProcessingRequest.MiddlewareDelegate pipeline = ProcessingRequest.BuildMiddlewarePipeLine(middlewarepipeline);
-                        await pipeline(context, () => Task.CompletedTask);
-                        Console.WriteLine("Final Message: " + context.Message);
+                        BuildProcessingRequest.MiddlewareDelegate pipeline = BuildProcessingRequest.BuildMiddlewarePipeLine(middlewarepipeline);
+                        await pipeline(() => Task.CompletedTask);
+                        Console.WriteLine("Final Message: " + "Message Processed");
+                        #endregion
+                        break;
+                    case 55:
+                        #region Uses of Custom Middleware Concept Using Dependency Injection Concept Services
+                        var serviceprovider = new ServiceCollection().AddSingleton<IUseMiddleware, LoggerService>()
+                            .BuildServiceProvider();
+                        var middlewares = serviceprovider.GetServices<IUseMiddleware>();
+                        Console.WriteLine("Start Middleware Pipeline");
+                        var middlewareDelegate = BuildMiddlewareRequest.BuildMiddlewarePipeline(middlewares);
+                        Console.WriteLine($"End Middleware Pipeline: {middlewareDelegate}");
                         #endregion
                         break;
                     default:
