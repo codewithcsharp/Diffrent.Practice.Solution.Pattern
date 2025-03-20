@@ -1,4 +1,4 @@
-﻿using Diffrent.Practice.Solution.Math;
+﻿using Diffrent.Practice.Concept.Mathematics;
 
 namespace Diffrent.Practice.Solution.Pattern.SOLID.OCP.SolutionStatement
 {

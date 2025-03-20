@@ -1,4 +1,4 @@
-﻿namespace Diffrent.Practice.Solution.Math
+﻿namespace Diffrent.Practice.Concept.Mathematics
 {
     public class MathLibrary
     {
