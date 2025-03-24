@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diffrent.Practice.Concept.M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diffrent.Practice.Concept.Mathematics", "Diffrent.Practice.Concept.Mathematics\Diffrent.Practice.Concept.Mathematics.csproj", "{A6944689-353A-4345-8B82-C0679BD10FB7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diffrent.Practice.Concept.WebApi", "Diffrent.Practice.Concept.WebApi\Diffrent.Practice.Concept.WebApi.csproj", "{53FAF8C6-E484-4B88-B259-2DA50556E40A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{A6944689-353A-4345-8B82-C0679BD10FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6944689-353A-4345-8B82-C0679BD10FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6944689-353A-4345-8B82-C0679BD10FB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53FAF8C6-E484-4B88-B259-2DA50556E40A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53FAF8C6-E484-4B88-B259-2DA50556E40A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53FAF8C6-E484-4B88-B259-2DA50556E40A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53FAF8C6-E484-4B88-B259-2DA50556E40A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
