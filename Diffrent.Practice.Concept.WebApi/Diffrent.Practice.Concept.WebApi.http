@@ -1,0 +1,6 @@
+@Diffrent.Practice.Concept.WebApi_HostAddress = http://localhost:5113
+
+GET {{Diffrent.Practice.Concept.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
